@@ -1,0 +1,24 @@
+ares_core:
+    resource: "@AresCoreBundle/Resources/config/routing.yml"
+    prefix:   /
+    
+ares_core_task:
+    resource: "@AresCoreBundle/Controller/TaskController.php"
+    type: annotation
+    
+ares_core_user:
+    resource: "@AresCoreBundle/Controller/UserController.php"
+    type: annotation
+    
+ares_core_usertask:
+    resource: "@AresCoreBundle/Controller/UserTaskController.php"
+    type: annotation  
+    
+ares_core_Chrono:
+    resource: "@AresCoreBundle/Controller/ChronoController.php"
+    type: annotation      
+    
+ares_core_State:
+    resource: "@AresCoreBundle/Controller/StateController.php"
+    type: annotation          
+

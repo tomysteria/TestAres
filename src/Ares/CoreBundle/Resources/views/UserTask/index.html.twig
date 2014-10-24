@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>UserTask list</h1>
+
+    <table class="records_list">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th style="color: red;">Assigné à</th>
+                <th style="color: blue;">Nom de la tâche</th>
+                <th style="color: grey;">Etat chrono</th>
+                <th style="color: purple;">Temps estimé</th>
+                <th style="color: orange;">Deadline</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><a href="{{ path('usertask_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+                <td style="color: red;">{{ entity.user }}</td>
+                <td style="color: blue;">{{ entity.task }}</td>
+                <td style="color: grey;">{{ entity.chrono }}</td>
+                <td style="color: purple;">{{ entity.task.estimatedTime }}</td>
+                <td style="color: orange;">{{ entity.task.deadline|date("d M Y H:i:s") }}</td>
+                <td>
+                <ul>
+                    <li>
+                        <a href="{{ path('usertask_show', { 'id': entity.id }) }}">show</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('usertask_edit', { 'id': entity.id }) }}">edit</a>
+                    </li>
+                </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+        <ul>
+        <li>
+            <a href="{{ path('usertask_new') }}">
+                Create a new entry
+            </a>
+        </li>
+    </ul>
+    {% endblock %}

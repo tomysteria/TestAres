@@ -1,0 +1,7 @@
+ares_core_homepage:
+    path:     /hello/{name}
+    defaults: { _controller: AresCoreBundle:Default:index }
+    
+ares_core_tasks:
+    path:     /tasks
+    defaults: { _controller: AresCoreBundle:Default:listTasks }    
